@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="firstName">Nome</label><br />
+      <input
+        required
+        name="firstName"
+        id="firstName"
+        placeholder="Inserisci il tuo nome"
+        type="text"
+      />
+
+      <br />
+
+      <label for="lastName">Cognome</label><br />
+      <input
+        maxlength="10"
+        minlength="2"
+        name="lastName"
+        id="lastName"
+        placeholder="Inserisci il tuo cognome"
+        type=""
+      />
+
+      <br />
+
+      <label for="number">Numero preferito</label><br />
+      <input
+        max="14"
+        min="5"
+        name="number"
+        id="number"
+        placeholder="Inserisci il tuo numero preferito"
+        type="number"
+      />
+
+      <br />
+
+      <label for="password">Password</label><br />
+      <input
+        required
+        name="password"
+        id="password"
+        placeholder="Inserisci la tua password"
+        type="password"
+      />
+
+      <br />
+
+      <label for="email">E-mail</label><br />
+      <input
+        name="email"
+        id="email"
+        placeholder="Inserisci la tua email"
+        type="email"
+      />
+
+      <br />
+
+      <label for="birthday">Data di nascita</label><br />
+      <input name="birthday" id="birthday" type="date" />
+
+      <br />
+
+      <label for="color">Colore preferito</label><br />
+      <input name="color" id="color" type="color" />
+
+      <br />
+
+      <input name="privacy1" id="privacy1" type="checkbox" />
+      <label for="privacy1">Consenti privacy 1</label>
+      <br />
+      <input name="privacy2" id="privacy2" type="checkbox" />
+      <label for="privacy2">Consenti privacy 2</label>
+
+      <br />
+
+      <h6>Genere</h6>
+      <input name="gender" id="male" type="radio" />
+      <label for="male">Maschio</label>
+      <br />
+      <input name="gender" id="female" type="radio" />
+      <label for="female">Femmina</label>
+      <br />
+      <input name="gender" id="other" type="radio" />
+      <label for="other">Altro</label>
+
+      <br />
+
+      <input type="submit" value="Registrati" />
+      <br />
+      oppure
+      <br />
+      <button type="submit">Registrati dal bottone</button>
+    </form>
+  </body>
+</html>
