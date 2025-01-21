@@ -1,0 +1,30 @@
+body {
+    color: blue;
+}
+
+.text-green {
+    color: green;
+    background-color: blueviolet;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+h1 {
+    color: red;
+}
+
+#titolo {
+    color: orange;
+}
+
+.contenitore1 p {
+    color: lime;
+}
+
+p {
+    color: deeppink;
+
+    padding: 16px;
+}
