@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <style>
+        input {
+            color: blue !important;
+            border: 2px solid blue;
+        }
+        #name {
+            color: #ff0000;
+        }
+
+        input[name="name"] {
+            padding: 16px;
+            border: 2px solid orange;
+        }
+
+        input[required] {
+            margin-left: 32px;
+        }
+
+        input:not([required]) {
+            margin-left: 16px;
+        }
+
+        div:not(.input-field) {
+            color: white;
+        }
+
+        .bg-red {
+            background-color: red;
+            transition: all 500ms ease;
+            opacity: 1;
+        }
+        .bg-red:hover {
+            opacity: 0.6;
+            transform: scale(0.9);
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="input-field">
+      <label for="name">Nome</label><br />
+      <input
+        name="name"
+        id="name"
+        type="text"
+        placeholder="Inserisci il nome"
+      />
+    </div>
+    <br />
+    <div class="bg-red">
+        Sono un div con lo sfondo rosso
+    </div>
+    <br/>
+    <div class="input-field">
+      <label for="surname">Cognome</label><br />
+      <input
+        name="surname"
+        id="surname"
+        type="text"
+        required
+        placeholder="Inserisci il cognome"
+      />
+    </div>
+  </body>
+</html>
