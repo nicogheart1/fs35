@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <style>
+      :root {
+        --primary-color: rgb(58, 22, 150);
+        --primary-font: 40px;
+
+        --container-min-heigth: 200px;
+
+        --square-height: calc(var(--container-min-heigth) + 50px);
+      }
+
+      .square {
+        border: 2px solid var(--primary-color);
+
+        height: var(--square-height);
+        width: min(
+          150px,
+          var(--container-min-heigth),
+          calc(var(--container-min-heigth) - 120px)
+        );
+
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="square">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo asperiores
+      ab excepturi incidunt nostrum rem, consequuntur debitis iusto. Recusandae
+      dicta consequatur quam esse facere excepturi repellat ea, magnam
+      praesentium iure?
+    </div>
+  </body>
+</html>
