@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <style>
+      .float {
+        border: 2px solid red;
+      }
+      .float img {
+        float: right;
+      }
+
+      .fixed div {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        background: red;
+        width: 50%;
+        height: 150px;
+        transform: translate(-50%, -50%);
+
+        opacity: 1;
+      }
+
+      .relative {
+        border: 2px solid green;
+        position: relative;
+        margin-top: 300px;
+      }
+
+      .absolute {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="float">
+      <img src="https://picsum.photos/200/200" alt="random image" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+        delectus veniam maxime sit, numquam blanditiis suscipit enim neque
+        doloremque autem error ut dignissimos nam eius nihil explicabo
+        distinctio inventore? Possimus. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Mollitia, delectus veniam maxime sit, numquam
+        blanditiis suscipit enim neque doloremque autem error ut dignissimos nam
+        eius nihil explicabo distinctio inventore? Possimus. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Mollitia, delectus veniam maxime
+        sit, numquam blanditiis suscipit enim neque doloremque autem error ut
+        dignissimos nam eius nihil explicabo distinctio inventore? Possimus.
+      </p>
+    </div>
+
+    <div class="fixed">
+      <div>Elemento libero</div>
+    </div>
+    
+    <br />
+
+    <div class="relative">
+        <img class="absolute" src="https://picsum.photos/200/200" alt="random image" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+        delectus veniam maxime sit, numquam blanditiis suscipit enim neque
+        doloremque autem error ut dignissimos nam eius nihil explicabo
+        distinctio inventore? Possimus. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Mollitia, delectus veniam maxime sit, numquam
+        blanditiis suscipit enim neque doloremque autem error ut dignissimos nam
+        eius nihil explicabo distinctio inventore? Possimus. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Mollitia, delectus veniam maxime
+        sit, numquam blanditiis suscipit enim neque doloremque autem error ut
+        dignissimos nam eius nihil explicabo distinctio inventore? Possimus.
+      </p>
+    </div>
+  </body>
+</html>
