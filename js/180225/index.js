@@ -72,8 +72,7 @@ for (let key in student) {
 const student2 = student;
 student2.name = "Simone";
 
-console.log(student);
-console.log(student2);
+console.log(student, student2);
 
 const student3 = {};
 
@@ -83,6 +82,6 @@ for (let key in student) {
 
 console.log(student, student3);
 
-student3.name = "Simone";
+student3.name = "Alberto";
 
 console.log(student, student3);
