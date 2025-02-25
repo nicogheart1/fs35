@@ -1,10 +1,9 @@
 const numbers = [45, 4, 23, 77, 8, 43, 212, 3453];
 
-/*numbers.forEach((value, i) => {
+/*numbers.forEach((value, i, array) => {
     console.log(i);
     numbers[i] = i;
 });
-
 
 console.log("array dopo forEach", numbers);*/
 
