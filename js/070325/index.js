@@ -24,11 +24,11 @@ function promessa() {
   });
 }
 
-const nuovaPromiseFn = () =>
+const nuovaPromiseFn = (num1, num2) =>
   new Promise((resolve, reject) => {
     console.log("sono una promise");
 
-    const result = 5 + 5;
+    const result = num1 + num2;
 
     //console.log(pippo);
 
@@ -41,7 +41,7 @@ const nuovaPromiseFn = () =>
     }, 5000);
   });
 
-nuovaPromiseFn()
+nuovaPromiseFn(num1, num2)
   .then((response) => {
     console.log("Resolved", response);
   })
