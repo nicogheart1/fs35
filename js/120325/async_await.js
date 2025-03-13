@@ -24,13 +24,18 @@ const promise3 = () =>
   .catch((error) => console.error(error));*/
 
 async function run_promise1() {
-  await promise1();
-  console.log("risultato async/await", "promise 1");
+  try {
+    await promise1();
+    console.log("risultato async/await", "promise 1");
+  
+    const result2 = await promise2();
+    console.log("risultato async/await", result2);
+  
+    const result3 = await promise3();
+    console.log("risultato async/await", result3);
+  } catch (error) {
+    console.error(error);
+  }
 
-  const result2 = await promise2();
-  console.log("risultato async/await", result2);
-
-  const result3 = await promise3();
-  console.log("risultato async/await", result3);
 }
 run_promise1();
