@@ -21,3 +21,29 @@ async function getPostsFromAPI_async() {
   }
 }
 getPostsFromAPI_async();
+
+
+
+
+
+
+
+
+
+
+function getUser(callback) {
+  fetch("https://jsonplaceholder.typicode.com/users/1")
+    .then((response) => {
+      console.log("siamo qui", response);
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Data: ", data);
+      callback(data)
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+getUser((data) => console.log("dati estratti", data));
