@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .titolo {
+            color: blue;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 class="test test1 test2 test3">Manipolazione del DOM</h1>
+
+    <script>
+        const h1 = document.querySelector("h1");
+        console.log("h1", h1.innerText);
+
+        const body = document.querySelector("body");
+
+        setTimeout(() => {
+            //h1.innerText = "Ciao, sono il <button>nuovo testo</button>";
+            h1.innerHTML = "Ciao, sono il <button>nuovo testo</button>";
+
+            //h1.style.color = "red";
+            h1.style.fontSize = "20px";
+            h1.style.padding = "10px 20px 30px";
+
+
+            h1.classList.add("titolo");
+            h1.classList.remove("test");
+            console.log("classList", h1.classList);
+
+
+            h1.setAttribute("id", "title-id");
+            h1.setAttribute("user-data", "Mario Rossi");
+
+
+
+            const paragraph = document.createElement("p");
+            paragraph.innerText = "Sono il nuovo paragrafo";
+
+
+            body.appendChild(paragraph);
+        }, 2000)
+
+    </script>
+    <script src="./index.js"></script>
+  </body>
+</html>
