@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input
+        required
+        type="text"
+        placeholder="Name"
+        name="name"
+        id="name"
+        maxlength="20"
+        minlength="3"
+      />
+      <label for="name">Inserisci il tuo nome</label>
+
+      <input
+        required
+        type="text"
+        placeholder="Surname"
+        name="surname"
+        id="surname"
+        maxlength="20"
+        minlength="3"
+      />
+      <label for="name">Inserisci il tuo cognome</label>
+
+      <button type="submit">Invia</button>
+    </form>
+
+    <div>
+        <p id="paragraph">Sono un paragrafo</p>
+    </div>
+
+    <script>
+
+
+      function onFormSubmit(event) {
+        event.preventDefault();
+        console.log(event);
+
+        const name = document.getElementById("name").value;
+        const surname = document.getElementById("surname").value;
+
+        if (name !== "Michele") {
+            alert("Utente non autorizzato");
+        }
+        console.log("Form data:", name, surname);
+      }
+
+      const form = document.querySelector("form");
+
+      /*form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const name = formData.get("name");
+        const surname = formData.get("surname");
+        console.log("Form data:", formData, name, surname);
+      });*/
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const surname = document.getElementById("surname").value;
+
+        console.log("Form data from addEventListener:", event, name, surname);
+      });
+
+
+      const paragraph = document.getElementById("paragraph");
+
+      paragraph.addEventListener("mouseover", (event) => {
+        console.log("Sei sopra il paragrafo")
+        paragraph.style.color = "red";
+      });
+
+      document.addEventListener("keypress", (event) => {
+        console.log(event);
+      });
+
+    </script>
+  </body>
+</html
