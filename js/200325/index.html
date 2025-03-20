@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Benvenuto utente</h1>
+    <form>
+      <input
+        required
+        type="text"
+        placeholder="Name"
+        name="name"
+        id="name"
+        maxlength="20"
+        minlength="3"
+      />
+      <label for="name">Inserisci il tuo nome</label>
+
+      <button type="submit">Invia</button>
+    </form>
+
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const input = document.getElementById("name");
+        const utente = input.value;
+        console.log("Il nome dell'utente è:", utente);
+
+        const h1 = document.querySelector("h1");
+        h1.innerText = `Benvenuto ${utente}`;
+
+        localStorage.setItem("name", utente);
+        //sessionStorage.setItem("name", utente);
+      });
+
+      const name = localStorage.getItem("name");
+      //const name = sessionStorage.getItem("name");
+
+      if (name) {
+        const h1 = document.querySelector("h1");
+        h1.innerText = `Benvenuto ${name}`;
+      }
+    </script>
+  </body>
+</html>
