@@ -1,8 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import NuovoComponente from './nuovoComponente';
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import NuovoComponente from "./nuovoComponente";
+import Somma from "./somma";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -12,7 +13,7 @@ import NuovoComponente from './nuovoComponente';
 // lower-snake-case
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -25,7 +26,26 @@ function App() {
         </a>
       </div>
       <h1>Titolo modificato 2</h1>
-      <NuovoComponente />
+
+      <div>
+        <Somma num1={27} num2={19} />
+        <Somma num1={21} num2={9} />
+        <Somma num1={34} num2={15} />
+      </div>
+
+      <div className="flex">
+        <NuovoComponente
+          testo="testo 1"
+          titolo="Titolo 1"
+          descrizione="Descrizione 1"
+        />
+        <NuovoComponente
+          testo="testo 2"
+          titolo="Titolo 2"
+          descrizione="Descrizione 2"
+        />{" "}
+      </div>
+
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -38,7 +58,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
