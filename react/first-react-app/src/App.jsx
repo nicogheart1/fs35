@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className={false ? "classe-vera" : "classe-falsa"}>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -28,6 +28,7 @@ function App() {
       <h1>Titolo modificato 2</h1>
 
       <div>
+        {15 + 5 == 21 ? <Somma num1={15} num2={5} /> : null}
         <Somma num1={27} num2={19} />
         <Somma num1={21} num2={9} />
         <Somma num1={34} num2={15} />
@@ -36,14 +37,14 @@ function App() {
       <div className="flex">
         <NuovoComponente
           testo="testo 1"
-          titolo="Titolo 1"
+          titolo={15 + 5 !== 20 ? "Titolo 1" : "Titolo alternativo"}
           descrizione="Descrizione 1"
         />
         <NuovoComponente
           testo="testo 2"
           titolo="Titolo 2"
           descrizione="Descrizione 2"
-        />{" "}
+        />
       </div>
 
       <div className="card">
