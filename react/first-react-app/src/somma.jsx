@@ -5,6 +5,8 @@ function somma(a, b) {
 function Somma(props) {
   const calcolo = somma(props.num1, props.num2);
 
+  props.onSumCalculated?.(calcolo);
+
   //   if (calcolo % 2 === 0) {
   //     return <div>il risultato è: {somma(props.num1, props.num2)}</div>;
   //   } else {

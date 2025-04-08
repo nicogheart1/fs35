@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import NuovoComponente from "./nuovoComponente";
 import Somma from "./somma";
+import Clock from "./clock";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -14,6 +15,10 @@ import Somma from "./somma";
 
 function App() {
   const [count, setCount] = useState(0);
+
+  const visualizzaSomma = (somma) => {
+    console.log("la somma è:", somma)
+  }
 
   return (
     <>
@@ -28,9 +33,16 @@ function App() {
       <h1>Titolo modificato 2</h1>
 
       <div>
+        <h2>Clock</h2>
+        <Clock />
+      </div>
+
+      <div>
         {15 + 5 == 21 ? <Somma num1={15} num2={5} /> : null}
         <Somma num1={27} num2={19} />
-        <Somma num1={21} num2={9} />
+
+        <Somma num1={21} num2={9} onSumCalculated={visualizzaSomma} />
+
         <Somma num1={34} num2={15} />
       </div>
 
