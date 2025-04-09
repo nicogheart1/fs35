@@ -5,6 +5,7 @@ import "./App.css";
 import NuovoComponente from "./nuovoComponente";
 import Somma from "./somma";
 import Clock from "./clock";
+import Contatore from "./Contatore";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -17,8 +18,8 @@ function App() {
   const [count, setCount] = useState(0);
 
   const visualizzaSomma = (somma) => {
-    console.log("la somma è:", somma)
-  }
+    console.log("la somma è:", somma);
+  };
 
   return (
     <>
@@ -31,6 +32,11 @@ function App() {
         </a>
       </div>
       <h1>Titolo modificato 2</h1>
+
+      <div>
+        <h2>Contatore</h2>
+        <Contatore />
+      </div>
 
       <div>
         <h2>Clock</h2>
@@ -60,7 +66,7 @@ function App() {
       </div>
 
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => setCount(count + 1)}>
           count is {count}
         </button>
         <p>
