@@ -6,6 +6,7 @@ import NuovoComponente from "./nuovoComponente";
 import Somma from "./somma";
 import Clock from "./clock";
 import Contatore from "./Contatore";
+import EsercizioUseState from "./esercizio_useState/esercizio";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -32,6 +33,11 @@ function App() {
         </a>
       </div>
       <h1>Titolo modificato 2</h1>
+
+      <div>
+        <h2>Esercizio useState</h2>
+        <EsercizioUseState />
+      </div>
 
       <div>
         <h2>Contatore</h2>
