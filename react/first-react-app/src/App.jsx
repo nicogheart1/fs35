@@ -7,6 +7,7 @@ import Somma from "./somma";
 import Clock from "./clock";
 import Contatore from "./Contatore";
 import EsercizioUseState from "./esercizio_useState/esercizio";
+import Counter from "./Counter";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -40,7 +41,12 @@ function App() {
       </div>
 
       <div>
-        <h2>Contatore</h2>
+        <h2>Contatore (useEffect)</h2>
+        <Counter />
+      </div>
+
+      <div>
+        <h2>Contatore (useState)</h2>
         <Contatore />
       </div>
 
