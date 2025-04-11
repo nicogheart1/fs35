@@ -23,11 +23,11 @@ const Counter = () => {
 
   // component update
   useEffect(() => {
-    console.log("counter aggiornato", counter);
+    //console.log("counter aggiornato", counter);
   }, [counter]);
 
   useEffect(() => {
-    console.log("altroState aggiornato", altroState);
+    //console.log("altroState aggiornato", altroState);
   }, [altroState]);
 
   const increment = () => {
