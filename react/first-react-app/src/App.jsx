@@ -8,6 +8,8 @@ import Clock from "./clock";
 import Contatore from "./Contatore";
 import EsercizioUseState from "./esercizio_useState/esercizio";
 import Counter from "./Counter";
+import ControlledForm from "./form/controlledForm";
+import UncontrolledForm from "./form/uncontrolledForm";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -34,6 +36,15 @@ function App() {
         </a>
       </div>
       <h1>Titolo modificato 2</h1>
+
+      <div>
+        <h2>Controlled Form</h2>
+        <ControlledForm />
+      </div>
+      <div>
+        <h2>Uncontrolled Form</h2>
+        <UncontrolledForm />
+      </div>
 
       <div>
         <h2>Esercizio useState</h2>
@@ -78,9 +89,7 @@ function App() {
       </div>
 
       <div className="card">
-        <button onClick={() => setCount(count + 1)}>
-          count is {count}
-        </button>
+        <button onClick={() => setCount(count + 1)}>count is {count}</button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>

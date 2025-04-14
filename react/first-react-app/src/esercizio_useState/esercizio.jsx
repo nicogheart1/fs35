@@ -10,13 +10,16 @@ const EsercizioUseState = () => {
   const handleChange = (field, value) => {
     setFormData({
       ...formData,
-      [field]: value,
+      [field]: value
     });
   };
 
   useEffect(() => {
     if (formData.email === "mario.rossi@gmail.com") {
-      alert("ciao mario");
+      setFormData({
+        ...formData,
+        username: "mario.rossi"
+      })
     }
   }, [formData]);
 
@@ -38,6 +41,7 @@ const EsercizioUseState = () => {
           required
           placeholder="Email"
           onChange={(event) => handleChange("email", event.target.value)}
+          value={formData.email}
         />
         <input
           name="username"
@@ -45,6 +49,7 @@ const EsercizioUseState = () => {
           required
           placeholder="Username"
           onChange={(event) => handleChange("username", event.target.value)}
+          value={formData.username}
         />
         <input
           name="password"
@@ -52,6 +57,7 @@ const EsercizioUseState = () => {
           required
           placeholder="Password"
           onChange={(event) => handleChange("password", event.target.value)}
+          value={formData.password}
         />
 
         <button type="submit">Accedi</button>
