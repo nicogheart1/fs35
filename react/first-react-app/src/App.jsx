@@ -10,6 +10,8 @@ import EsercizioUseState from "./esercizio_useState/esercizio";
 import Counter from "./Counter";
 import ControlledForm from "./form/controlledForm";
 import UncontrolledForm from "./form/uncontrolledForm";
+import Card from "./Card";
+import PriceList from "./PriceList";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -27,7 +29,7 @@ function App() {
 
   return (
     <>
-      <div className={false ? "classe-vera" : "classe-falsa"}>
+      <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -37,6 +39,19 @@ function App() {
       </div>
       <h1>Titolo modificato 2</h1>
 
+      <div>
+        <h2>Card</h2>
+        <div className="flex flex-wrap">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
+      </div>
+      <div>
+        <h2>Controlled Form</h2>
+        <ControlledForm />
+      </div>
       <div>
         <h2>Controlled Form</h2>
         <ControlledForm />
@@ -67,7 +82,6 @@ function App() {
       </div>
 
       <div>
-        {15 + 5 == 21 ? <Somma num1={15} num2={5} /> : null}
         <Somma num1={27} num2={19} />
 
         <Somma num1={21} num2={9} onSumCalculated={visualizzaSomma} />
@@ -78,7 +92,6 @@ function App() {
       <div className="flex">
         <NuovoComponente
           testo="testo 1"
-          titolo={15 + 5 !== 20 ? "Titolo 1" : "Titolo alternativo"}
           descrizione="Descrizione 1"
         />
         <NuovoComponente
@@ -97,6 +110,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <PriceList />
     </>
   );
 }
