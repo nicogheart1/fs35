@@ -1,6 +1,4 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useEffect, useState } from "react";
 import "./App.css";
 import NuovoComponente from "./nuovoComponente";
 import Somma from "./somma";
@@ -11,7 +9,6 @@ import Counter from "./Counter";
 import ControlledForm from "./form/controlledForm";
 import UncontrolledForm from "./form/uncontrolledForm";
 import Card from "./Card";
-import PriceList from "./PriceList";
 import EsercizioControlledForm from "./esercizio_controlledForm/esercizioControlledForm";
 
 // camelCase firstName
@@ -22,7 +19,15 @@ import EsercizioControlledForm from "./esercizio_controlledForm/esercizioControl
 // lower-snake-case
 
 function App() {
+  const [lista, setLista] = useState([]);
+
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (count) {
+      setLista([...lista, count]);
+    }
+  }, [count]);
 
   const visualizzaSomma = (somma) => {
     console.log("la somma è:", somma);
@@ -30,64 +35,62 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1 className="my-16 p-2">Titolo modificato 2</h1>
+
+      <div className="my-2 p-2">
+        <button
+          className="border rounded bg-amber-300 p-4"
+          onClick={() => setCount(count + 1)}
+        >
+          count is {count}
+        </button>
       </div>
-      <h1>Titolo modificato 2</h1>
+
+      <div className="my-2 p-2">
+        <h2>Cards</h2>
+        <div className="my-2 flex flex-wrap">
+          {lista.map((value, index) => (
+            <Card key={index} text={value} />
+          ))}
+        </div>
+      </div>
 
       <div className="my-24 border p-16">
         <h2>Esercizio Controlled Form</h2>
         <EsercizioControlledForm />
       </div>
 
-      <div>
-        <h2>Card</h2>
-        <div className="flex flex-wrap">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
-      </div>
-      <div>
+      <div className="my-4 p-2 border">
         <h2>Controlled Form</h2>
         <ControlledForm />
       </div>
-      <div>
-        <h2>Controlled Form</h2>
-        <ControlledForm />
-      </div>
-      <div>
+
+      <div className="my-4 p-2 border">
         <h2>Uncontrolled Form</h2>
         <UncontrolledForm />
       </div>
 
-      <div>
+      <div className="my-4 p-2 border">
         <h2>Esercizio useState</h2>
         <EsercizioUseState />
       </div>
 
-      <div>
+      <div className="my-4 p-2 border">
         <h2>Contatore (useEffect)</h2>
         <Counter />
       </div>
 
-      <div>
+      <div className="my-4 p-2 border">
         <h2>Contatore (useState)</h2>
         <Contatore />
       </div>
 
-      <div>
+      <div className="my-4 p-2 border">
         <h2>Clock</h2>
         <Clock />
       </div>
 
-      <div>
+      <div className="my-4 p-2 border">
         <Somma num1={27} num2={19} />
 
         <Somma num1={21} num2={9} onSumCalculated={visualizzaSomma} />
@@ -95,29 +98,14 @@ function App() {
         <Somma num1={34} num2={15} />
       </div>
 
-      <div className="flex">
-        <NuovoComponente
-          testo="testo 1"
-          descrizione="Descrizione 1"
-        />
+      <div className="my-2 p-2 border flex">
+        <NuovoComponente testo="testo 1" descrizione="Descrizione 1" />
         <NuovoComponente
           testo="testo 2"
           titolo="Titolo 2"
           descrizione="Descrizione 2"
         />
       </div>
-
-      <div className="card">
-        <button onClick={() => setCount(count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-
-      <PriceList />
     </>
   );
 }
