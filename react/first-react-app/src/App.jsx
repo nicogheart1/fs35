@@ -12,6 +12,7 @@ import ControlledForm from "./form/controlledForm";
 import UncontrolledForm from "./form/uncontrolledForm";
 import Card from "./Card";
 import PriceList from "./PriceList";
+import EsercizioControlledForm from "./esercizio_controlledForm/esercizioControlledForm";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -38,6 +39,11 @@ function App() {
         </a>
       </div>
       <h1>Titolo modificato 2</h1>
+
+      <div className="my-24 border p-16">
+        <h2>Esercizio Controlled Form</h2>
+        <EsercizioControlledForm />
+      </div>
 
       <div>
         <h2>Card</h2>
