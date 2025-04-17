@@ -11,6 +11,7 @@ import UncontrolledForm from "./form/uncontrolledForm";
 import Card from "./Card";
 import EsercizioControlledForm from "./esercizio_controlledForm/esercizioControlledForm";
 import EsercizioRef from "./useRef/esercizioRef";
+import EsercizioRipassoFormListe from "./esercizioRipassoFormListe/esercizioRipassoFormList";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -54,6 +55,11 @@ function App() {
             <Card key={index} text={value} />
           ))}
         </div>
+      </div>
+
+      <div className="my-24 border p-16">
+        <h2>Esercizio Ripasso Form e Liste</h2>
+        <EsercizioRipassoFormListe />
       </div>
 
       <div className="my-24 border p-16">
