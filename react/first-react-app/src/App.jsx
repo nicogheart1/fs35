@@ -10,6 +10,7 @@ import ControlledForm from "./form/controlledForm";
 import UncontrolledForm from "./form/uncontrolledForm";
 import Card from "./Card";
 import EsercizioControlledForm from "./esercizio_controlledForm/esercizioControlledForm";
+import EsercizioRef from "./useRef/esercizioRef";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -88,6 +89,11 @@ function App() {
       <div className="my-4 p-2 border">
         <h2>Clock</h2>
         <Clock />
+      </div>
+
+      <div className="my-24 border p-16">
+        <h2>Esercizio useRef</h2>
+        <EsercizioRef />
       </div>
 
       <div className="my-4 p-2 border">

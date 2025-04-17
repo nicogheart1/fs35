@@ -1,19 +1,19 @@
 import { useRef } from "react";
 
 const UncontrolledForm = () => {
-    const emailRef = useRef();
-    const usernameRef = useRef();
-    const passwordRef = useRef();
+  const emailRef = useRef();
+  const usernameRef = useRef();
+  const passwordRef = useRef();
 
-    const handleSumbit = (event) => {
-        event.preventDefault();
+  const handleSumbit = (event) => {
+    event.preventDefault();
 
-        console.log("form", {
-            email: emailRef.current.value,
-            username: usernameRef.current.value,
-            password: passwordRef.current.value,
-        })
-    };
+    console.log("form", {
+      email: emailRef.current.value,
+      username: usernameRef.current.value,
+      password: passwordRef.current.value,
+    });
+  };
 
   return (
     <form
@@ -23,12 +23,7 @@ const UncontrolledForm = () => {
       }}
       onSubmit={handleSumbit}
     >
-      <input
-        name="email"
-        type="email"
-        placeholder="Email"
-        ref={emailRef}
-      />
+      <input name="email" type="email" placeholder="Email" ref={emailRef} />
       <input
         name="username"
         type="text"
