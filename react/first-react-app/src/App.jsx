@@ -12,6 +12,7 @@ import Card from "./Card";
 import EsercizioControlledForm from "./esercizio_controlledForm/esercizioControlledForm";
 import EsercizioRef from "./useRef/esercizioRef";
 import EsercizioRipassoFormListe from "./esercizioRipassoFormListe/esercizioRipassoFormList";
+import ChildrenComponent from "./ChildrenComponent";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -46,6 +47,25 @@ function App() {
         >
           count is {count}
         </button>
+      </div>
+
+      <div className="my-24 border p-16">
+        <h2>Children</h2>
+        <ChildrenComponent>
+          <h2>sono un titolo</h2>
+          <div>sono un div</div>
+          <ul>
+            <li>lista 1</li>
+            <li>lista 2</li>
+            <li>lista 3</li>
+            <li>lista 4</li>
+          </ul>
+        </ChildrenComponent>
+
+        <ChildrenComponent>
+          <button>cliccami</button>
+          <Card text="sono una card children" />
+        </ChildrenComponent>
       </div>
 
       <div className="my-2 p-2">
