@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./App.css";
 import NuovoComponente from "./nuovoComponente";
 import Somma from "./somma";
@@ -13,6 +13,7 @@ import EsercizioControlledForm from "./esercizio_controlledForm/esercizioControl
 import EsercizioRef from "./useRef/esercizioRef";
 import EsercizioRipassoFormListe from "./esercizioRipassoFormListe/esercizioRipassoFormList";
 import ChildrenComponent from "./ChildrenComponent";
+import { LanguageProvider } from "./Layout";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -26,6 +27,8 @@ function App() {
 
   const [count, setCount] = useState(0);
 
+  const language = useContext(LanguageProvider);
+
   useEffect(() => {
     if (count) {
       setLista([...lista, count]);
@@ -38,7 +41,7 @@ function App() {
 
   return (
     <>
-      <h1 className="my-16 p-2">Titolo modificato 2</h1>
+      <h1 className="my-16 p-2">{language === "ita" ? "Titolo modificato 2" : "Modified title 2"}</h1>
 
       <div className="my-2 p-2">
         <button

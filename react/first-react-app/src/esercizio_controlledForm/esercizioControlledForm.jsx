@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserProvider } from "../Layout";
 
 const ErrorComponent = (props) => {
   const { value } = props;
@@ -15,10 +16,12 @@ const ErrorComponent = (props) => {
 };
 
 const EsercizioControlledForm = () => {
-//   const [username, setUsername] = useState("");
+  //   const [username, setUsername] = useState("");
+
+  const user = useContext(UserProvider);
 
   const [formData, setFormData] = useState({
-    username: "",
+    username: user.name,
     password: "",
   });
 
@@ -34,7 +37,8 @@ const EsercizioControlledForm = () => {
         placeholder="Insrisci username"
         type="text"
         value={formData.username}
-        onChange={(event) => setFormData({ ...formData, username: event.target.value })
+        onChange={(event) =>
+          setFormData({ ...formData, username: event.target.value })
         }
       />
       <ErrorComponent value={formData.username} />
