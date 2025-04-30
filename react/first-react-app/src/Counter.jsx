@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useCounter } from "./hooks/useCounter";
 
 const Counter = () => {
-  const [counter, setCounter] = useState(0);
   const [altroState, setAltroState] = useState(0);
+
+  const {counter, increment, decrement, reset } = useCounter();
 
   const [time, setTime] = useState(new Date().toLocaleTimeString());
 
@@ -13,7 +15,7 @@ const Counter = () => {
     const intervalId = setInterval(() => {
       setTime(new Date().toLocaleTimeString());
 
-      setCounter((counter) => counter + 1);
+      increment();
     }, 1000);
 
     return () => {
@@ -29,16 +31,6 @@ const Counter = () => {
   useEffect(() => {
     //console.log("altroState aggiornato", altroState);
   }, [altroState]);
-
-  const increment = () => {
-    setCounter(counter + 1);
-  };
-  const decrement = () => {
-    setCounter(counter - 1);
-  };
-  const reset = () => {
-    setCounter(0);
-  };
 
   return (
     <>

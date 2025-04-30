@@ -14,6 +14,7 @@ import EsercizioRef from "./useRef/esercizioRef";
 import EsercizioRipassoFormListe from "./esercizioRipassoFormListe/esercizioRipassoFormList";
 import ChildrenComponent from "./ChildrenComponent";
 import { LanguageProvider } from "./Layout";
+import { useCounter } from "./hooks/useCounter";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -25,7 +26,7 @@ import { LanguageProvider } from "./Layout";
 function App() {
   const [lista, setLista] = useState([]);
 
-  const [count, setCount] = useState(0);
+  const { counter: count, increment } = useCounter();
 
   const language = useContext(LanguageProvider);
 
@@ -46,7 +47,7 @@ function App() {
       <div className="my-2 p-2">
         <button
           className="border rounded bg-amber-300 p-4"
-          onClick={() => setCount(count + 1)}
+          onClick={increment}
         >
           count is {count}
         </button>
