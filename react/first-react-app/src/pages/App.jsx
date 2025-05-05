@@ -1,20 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import "./App.css";
-import NuovoComponente from "./nuovoComponente";
-import Somma from "./somma";
-import Clock from "./clock";
-import Contatore from "./Contatore";
-import EsercizioUseState from "./esercizio_useState/esercizio";
-import Counter from "./Counter";
-import ControlledForm from "./form/controlledForm";
-import UncontrolledForm from "./form/uncontrolledForm";
-import Card from "./Card";
-import EsercizioControlledForm from "./esercizio_controlledForm/esercizioControlledForm";
-import EsercizioRef from "./useRef/esercizioRef";
-import EsercizioRipassoFormListe from "./esercizioRipassoFormListe/esercizioRipassoFormList";
-import ChildrenComponent from "./ChildrenComponent";
-import { LanguageProvider } from "./Layout";
-import { useCounter } from "./hooks/useCounter";
+import NuovoComponente from "../components/nuovoComponente";
+import Somma from "../components/somma";
+import Clock from "../components/clock";
+import Contatore from "../components/Contatore";
+import EsercizioUseState from "../components/esercizio_useState/esercizio";
+import Counter from "../components/Counter";
+import ControlledForm from "../components/form/controlledForm";
+import UncontrolledForm from "../components/form/uncontrolledForm";
+import Card from "../components/Card";
+import EsercizioControlledForm from "../components/esercizio_controlledForm/esercizioControlledForm";
+import EsercizioRef from "../useRef/esercizioRef";
+import EsercizioRipassoFormListe from "../components/esercizioRipassoFormListe/esercizioRipassoFormList";
+import ChildrenComponent from "../components/ChildrenComponent";
+import { LanguageProvider } from "../Layout";
+import { useCounter } from "../hooks/useCounter";
 
 // camelCase firstName
 // PascalCase FirstName

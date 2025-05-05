@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useCounter } from "./hooks/useCounter";
+import { useCounter } from "../hooks/useCounter";
 
 // const numbers = [1,2,3,4];
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useCounter } from "./hooks/useCounter";
+import { useCounter } from "../hooks/useCounter";
 
 const Counter = () => {
   const [altroState, setAltroState] = useState(0);

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { LanguageProvider } from "./Layout";
+import { LanguageProvider } from "../Layout";
 
 const lang_eng = {
     title: "Title",
