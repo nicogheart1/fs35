@@ -1,8 +1,9 @@
 import { createContext, useState } from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import App from "./pages/App";
 import About from "./pages/About";
-import Prodotto from "./pages/Prodotto";
+import DettagliProdotto from "./pages/DettagliProdotto";
+import ListaProdotti from "./pages/ListaProdotti";
 
 export const LanguageProvider = createContext("ita");
 
@@ -19,54 +20,77 @@ const Layout = (props) => {
     score: 0,
   });
 
+  const navigate = useNavigate();
+
   return (
-    <BrowserRouter>
-      <LanguageProvider.Provider value={language}>
-        <UserProvider.Provider value={user}>
-          <header>
-            <div className="flex flex-nowrap w-full justify-between items-center">
-              <h1>{props.title}</h1>
-              <button
-                onClick={() => {
-                  setLanguage("eng");
-                }}
-              >
-                eng
-              </button>
-              <button
-                onClick={() => {
-                  setLanguage("ita");
-                }}
-              >
-                ita
-              </button>
-              <h4>Lingua selezionata: {language}</h4>
-            </div>
+    <LanguageProvider.Provider value={language}>
+      <UserProvider.Provider value={user}>
+        <header>
+          <div className="flex flex-nowrap w-full justify-between items-center">
+            <h1>{props.title}</h1>
+            <button
+              onClick={() => {
+                setLanguage("eng");
+              }}
+            >
+              eng
+            </button>
+            <button
+              onClick={() => {
+                setLanguage("ita");
+              }}
+            >
+              ita
+            </button>
+            <h4>Lingua selezionata: {language}</h4>
+          </div>
 
-            <nav>
-              <ul className="flex flex-row flex-nowrap gap-2 items-center border border-red-400 p-2">
-                <li className="hover:underline">
-                  <Link to="/">Home</Link>
-                </li>
-                <li className="hover:underline">
-                  <Link to="/about">About</Link>
-                </li>
-              </ul>
-            </nav>
-          </header>
-          <main>
-            <Routes>
-              <Route path="/" element={<App />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/prodotto/:productId" element={<Prodotto />} />
+          <nav>
+            <ul className="flex flex-row flex-nowrap gap-2 items-center border border-red-400 p-2">
+              <li>
+                <span
+                  onClick={() => {
+                    navigate(-1);
+                  }}
+                  className="hover:underline"
+                >
+                  Torna indietro
+                </span>
+              </li>
+              <li className="hover:underline">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="hover:underline">
+                <Link to="/about">About</Link>
+              </li>
+              <li className="hover:underline">
+                <Link to="/prodotti">Prodotti</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/about" element={<About />} />
 
-              <Route path="*" element={<>Page Non Found</>} />
-            </Routes>
-          </main>
-          <footer>footer</footer>
-        </UserProvider.Provider>
-      </LanguageProvider.Provider>
-    </BrowserRouter>
+            {/* <Route path="/prodotti" element={<ListaProdotti />} />
+            <Route path="/prodotti/:productId" element={<DettagliProdotto />} /> */}
+
+            <Route path="/prodotti" element={<ListaProdotti />}>
+              <Route index element={<div>Seleziona un prodotto</div>} />
+              <Route
+                path="/prodotti/:productId"
+                element={<DettagliProdotto />}
+              />
+            </Route>
+
+            <Route path="*" element={<>Page Non Found</>} />
+          </Routes>
+        </main>
+        <footer>footer</footer>
+      </UserProvider.Provider>
+    </LanguageProvider.Provider>
   );
 };
 

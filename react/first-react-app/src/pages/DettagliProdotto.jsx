@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const Prodotto = () => {
+const DettagliProdotto = () => {
     const { productId } = useParams();
 
     useEffect(() => {
@@ -15,4 +15,4 @@ const Prodotto = () => {
     );
 };
 
-export default Prodotto;
+export default DettagliProdotto;
