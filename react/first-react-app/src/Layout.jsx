@@ -25,6 +25,7 @@ const Layout = (props) => {
   return (
     <LanguageProvider.Provider value={language}>
       <UserProvider.Provider value={user}>
+        <span>{process.env.REACT_APP_TESTO_PROVA}</span>
         <header>
           <div className="flex flex-nowrap w-full justify-between items-center">
             <h1>{props.title}</h1>
