@@ -15,6 +15,7 @@ import EsercizioRipassoFormListe from "../components/esercizioRipassoFormListe/e
 import ChildrenComponent from "../components/ChildrenComponent";
 import { LanguageProvider } from "../Layout";
 import { useCounter } from "../hooks/useCounter";
+import JsonServerComponent from "../components/JsonServerComponent";
 
 // camelCase firstName
 // PascalCase FirstName
@@ -42,13 +43,17 @@ function App() {
 
   return (
     <>
-      <h1 className="my-16 p-2">{language === "ita" ? "Titolo modificato 2" : "Modified title 2"}</h1>
+      <h1 className="my-16 p-2">
+        {language === "ita" ? "Titolo modificato 2" : "Modified title 2"}
+      </h1>
+
+      <div className="my-24 border p-16">
+        <h2>Integrazione json-server</h2>
+        <JsonServerComponent />
+      </div>
 
       <div className="my-2 p-2">
-        <button
-          className="border rounded bg-amber-300 p-4"
-          onClick={increment}
-        >
+        <button className="border rounded bg-amber-300 p-4" onClick={increment}>
           count is {count}
         </button>
       </div>
