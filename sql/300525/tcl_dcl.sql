@@ -1,0 +1,48 @@
+BEGIN TRANSACTION;
+
+SELECT COUNT (id) FROM Users;
+
+DELETE FROM Users WHERE id = 434;
+
+SELECT COUNT(id) FROM Users;
+
+DELETE FROM UserConfig WHERE userid = 4;
+
+ROLLBACK; // OR COMMIT;
+
+
+
+
+
+BEGIN TRANSACTION;
+
+SELECT COUNT (id) FROM Users;
+
+SAVEPOINT sp1;
+
+DELETE FROM Users WHERE id = 434;
+
+SELECT COUNT(id) FROM Users;
+
+ROLLBACK TO sp1;
+
+SELECT * FROM Users WHERE id = 434;
+
+DELETE FROM Users WHERE id = 4;
+
+SELECT COUNT(id) FROM Users;
+
+SAVEPOINT sp2;
+
+DELETE FROM UserConfig WHERE userid = 4;
+
+COMMIT;
+
+
+
+
+
+
+
+
+
