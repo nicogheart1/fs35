@@ -1,0 +1,25 @@
+{
+  "name": "express-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "tsc-watch --noClear -p ./tsconfig.json --outDir ./dist --onSuccess \"node ./dist/server.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node18": "^18.2.4",
+    "@types/express": "^5.0.3",
+    "@types/joi": "^17.2.3",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^22.15.30",
+    "tsc-watch": "^7.1.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "joi": "^17.13.3",
+    "morgan": "^1.10.0"
+  }
+}
