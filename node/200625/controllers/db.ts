@@ -24,6 +24,7 @@ const setupDB = async () => {
     await db.manyOrNone(`
         SELECT * FROM students;    
     `);
+
     console.log("query di controllo eseguita");
   } catch (error) {
     console.error("Errore nell'esecuzione della query di setup", error);
